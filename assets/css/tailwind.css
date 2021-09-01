@@ -1,0 +1,7 @@
+/* ./assets/css/tailwind.css */
+html, body {
+    scroll-behavior: smooth;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
