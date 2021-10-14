@@ -9,6 +9,7 @@ items:
 
 # Write Content
 
+<alert>L'Exposition Internationale de 1911 fit naître le quartier de la piazza Mazzini, ainsi que la création de la Galerie Nationale d'Art Moderne.</alert>
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 

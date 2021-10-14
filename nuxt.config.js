@@ -25,6 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/clickaway.js',
+    '~/plugins/vue-image-uploads.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,8 +46,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/cloudinary'
+    
   ],
+  cloudinary: {
+  cloudName: process.env.CLOUDNAME,
+  apiKey: process.env.API_KEY, //only needed if you are using server-side upload
+  apiSecret: process.env.API_SECRET, //only needed if you are using server-side upload,
+  useComponent: true
+},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

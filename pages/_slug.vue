@@ -1,5 +1,8 @@
 <template>
   <div class="font-inter">
+    <div class="text-3xl">
+      SLUG
+    </div>
     <nuxt-content :document="article" class="antialiased prose prose-sm prose-blue text-justify max-w-full leading-6" />
     <div class="h-60"></div>
     <SideBarRight :toc="article.toc" />

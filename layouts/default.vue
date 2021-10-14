@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-    hello
     <SideBar />
     <main
       class="pt-16 px-7 transition-all duration-300 ease-linear mr-52"

@@ -32,7 +32,7 @@
         v-for="link in toc"
         :key="link.id"
         :class="{
-          'pl-3 text-sm hover:pl-4 ': link.depth === 2,
+          'pl-3 text-sm text-gray-700 hover:pl-4': link.depth === 2,
           'pl-6 text-xs hover:pl-7': link.depth === 3,
         }"
         class="py-1 text-gray-400"
@@ -69,12 +69,10 @@ export default {
           scrollPosition < section.offsetTop + section.offsetHeight + 20
         ) {
           const currentId = section.attributes.id.value;
-          console.log(
-            "currentId===================================",
-            currentId
-          );
+          console.log(currentId)
+          const pathName = location.pathname
           removeAllActiveClass();
-          addActiveClass(currentId);
+          addActiveClass(currentId, pathName);
         }
       });
     };
