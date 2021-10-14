@@ -6,7 +6,7 @@
     <div>
       <form @submit.prevent="showInput">
         <input style="display: none" ref="input_ref" type="file" @change="preview"  />
-        <img v-show="open"  id="mon_image" src="" width="200px" height="200px" />
+        <embed  v-show="open"  id="mon_image" src="@/assets/images/pdf.svg" width="100%" height="500px" />
         <button class="bg-pink-600 px-4 py-[8px] text-white rounded-md shadow-inner font-semibold">Fichier...</button>
       </form>
     </div>
@@ -14,10 +14,12 @@
 </template>
 
 <script>
+import PdfSvg from './global/PdfSvg.vue';
 export default {
+  components: { PdfSvg },
     data() {
         return {
-            open: false
+            open: true,
         }
     },
   methods: {
