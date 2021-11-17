@@ -55,8 +55,8 @@ import addActiveClass from "../utils/addActiveClass";
 export default {
   props: ["toc"],
   mounted() {
-  //  window.scrollTo(0, 0);
-  //  removeAllActiveClass();
+    //  window.scrollTo(0, 0);
+    //  removeAllActiveClass();
     const lesh2 = document.querySelectorAll(".nuxt-content h2, h3");
     onscroll = function () {
       const scrollPosition = document.documentElement.scrollTop;
@@ -69,10 +69,16 @@ export default {
           scrollPosition < section.offsetTop + section.offsetHeight + 20
         ) {
           const currentId = section.attributes.id.value;
-          console.log(currentId)
-          const pathName = location.pathname
-          removeAllActiveClass();
-          addActiveClass(currentId, pathName);
+          console.log('currentId',currentId);
+
+          const pathName = location.pathname;
+          if (pathName == "/") {
+            console.log(pathName)
+            return;
+          } else {
+            removeAllActiveClass();
+            addActiveClass(currentId, pathName);
+          }
         }
       });
     };
@@ -97,13 +103,12 @@ export default {
 .nuxt-link-active {
   font-weight: 500 !important;
   border-left: aqua !important;
-
 }
 
 /* exact link will show the primary color for only the exact matching link */
 .nuxt-link-exact-active {
   color: #20ac84 !important;
-  border-left: aqua !important
+  border-left: aqua !important;
 }
 
 ul {
@@ -124,7 +129,6 @@ a:visited {
   color: inherit;
 }
 
-
 ::v-deep .nuxt-content h2::before {
   content: "";
   display: block;
@@ -137,5 +141,4 @@ a:visited {
   height: 60px; /* fixed header height*/
   margin: -50px 0 0; /* negative fixed header height */
 }
-
 </style>

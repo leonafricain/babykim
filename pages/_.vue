@@ -11,22 +11,24 @@
         leading-6
       "
     />
-    <div class="h-96"></div>
-    <SideBarRight :toc="article.toc" />
+    <div class="h-96">
+      {{pathy}}
+    </div>
+    <SideBarRight :toc="article.toc" v-if="pathy !== '/'" />
   </div>
 </template>
 
 <script>
 import fixIds from "../utils/fixIds";
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params, route }) {
     const article = await $content(params.pathMatch).fetch();
-    console.log("params==========", params);
-    console.log(article);
-    // fixIds(article.body.children)
+    const pathy = route.fullPath
+    fixIds(article.body.children);
     fixIds(article.toc);
     return {
       article,
+      pathy
     };
   },
 };

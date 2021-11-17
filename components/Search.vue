@@ -48,7 +48,7 @@
         <NuxtLink
           v-on-clickaway="hideDropDown"
           class="block text-sm rounded-sm"
-          :to= "article.slug"
+          :to= "article.path"
         >
           <div class="flex items-center space-x-2">
             <svg

@@ -1,6 +1,6 @@
 <template>
     <div class="h-[55px] flex items-center fixed w-full backdrop-blur-sm z-10 navbar">
-     <NuxtLink to="/" class="w-1/2">
+     <NuxtLink to="/" class="w-1/2" no-prefetch>
          <Logo />
      </NuxtLink>
        <div class="w-1/3">

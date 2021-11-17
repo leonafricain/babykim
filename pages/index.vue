@@ -1,7 +1,8 @@
 <template>
   <div>
+    <span class="text-4xl"> Use Cld-image </span>
     <div>
-      <cld-image publicId="IMG_4529.JPG.jpg"> </cld-image>
+      <cld-image publicId="ukz7zbwgaxo1vm3seiub"> </cld-image>
     </div>
     <div>
       <NuxtLink
@@ -13,7 +14,7 @@
       </NuxtLink>
     </div>
     <div class="text-2xl font-bold text-center">Index Page</div>
-    <div v-for="item in data" :key="item.id">
+    <div v-for="(item, index) in data" :key="index">
       <NuxtLink :to="item.path">
         {{ item.path }}
       </NuxtLink>
@@ -32,7 +33,6 @@
 export default {
   async asyncData({ $content }) {
     const data = await $content({ deep: true }).fetch();
-    console.log("data", data);
     return {
       data,
     };

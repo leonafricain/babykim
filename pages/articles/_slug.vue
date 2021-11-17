@@ -5,7 +5,7 @@
       >Articles</nuxt-link
     >
     <h2 class="py-6 text-2xl font-bold text-green-500">{{ article.title }}</h2>
-    <div v-for="author of authors" :key="author.slug">
+    <div v-for="author of authors" :key="author.id">
       <img :src="author.avatarUrl" width="50" height="50" />
       {{ author.name }}
     </div>

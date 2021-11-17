@@ -1,8 +1,8 @@
 <template>
   <div>
       <div>
-         <!--  <Upload />
- -->          <upload-view />
+          <Upload />
+         <!-- <upload-view /> -->
       </div>
       <div class="w-full border">
     <!-- <embed width="100%" height="500" :src="src" alt="An image example with Cloudinary" /> -->
